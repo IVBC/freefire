@@ -1,3 +1,4 @@
+import { Link } from '@/styles/components/NavLink';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
 
@@ -7,10 +8,6 @@ interface NavLinkProps {
 }
 function NavLink({ children, href }: NavLinkProps): JSX.Element {
   const router = useRouter();
-  const style = {
-    marginRight: 10,
-    color: router.pathname === href ? 'red' : 'black',
-  };
 
   const handleClick = (e: React.MouseEvent<Element, MouseEvent>): void => {
     e.preventDefault();
@@ -19,9 +16,9 @@ function NavLink({ children, href }: NavLinkProps): JSX.Element {
   };
 
   return (
-    <a href={href} onClick={handleClick} style={style}>
+    <Link href={href} onClick={handleClick} active={router.pathname === href}>
       {children}
-    </a>
+    </Link>
   );
 }
 

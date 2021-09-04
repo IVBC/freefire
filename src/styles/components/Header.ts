@@ -3,6 +3,14 @@ import styled from 'styled-components';
 import colors from '../colors';
 
 export const NavBar = styled.nav`
+  max-width: 1440px;
+  margin: 0 auto;
+
+  padding: 0px 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   /* border-left: 1px solid ${colors.primaryLight};
   padding-left: 30px;
   height: 32px;
@@ -27,22 +35,63 @@ export const NavBar = styled.nav`
 `;
 
 export const Container = styled.header`
+  width: 100%;
+  padding-top: 16px;
+
   /* height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between; */
 `;
 
-export const NavMenu = styled.div``;
-export const Logo = styled.div`
-  background: red;
+export const NavMenu = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
 
-  svg {
-    fill: red;
+export const Logo = styled.div`
+  max-width: 88px;
+`;
+export const NavList = styled.ul`
+  list-style: none;
+  display: flex;
+
+  li {
+    margin-left: 24px;
+  }
+
+  @media screen and (max-width: 960px) {
+    display: none;
   }
 `;
-export const NavList = styled.ul``;
-export const NavSocial = styled.div``;
+export const NavSocial = styled.div`
+  display: flex;
+
+  svg {
+    cursor: pointer;
+
+    margin-left: 16px;
+    width: 24px;
+
+    path,
+    circle {
+      transition: 0.7s ease;
+    }
+
+    &:hover {
+      path,
+      circle {
+        fill: ${colors.secondaryDark};
+        transform: translate3d(0, -3px, 0);
+      }
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+`;
 
 // export const Profile = styled.div`
 //   display: flex;
@@ -69,26 +118,26 @@ export const NavSocial = styled.div``;
 export const MenuToggle = styled.div`
   width: 40px;
   height: 30px;
-  @media (min-width: 890px) {
+  @media (min-width: 960px) {
     display: none;
   }
 `;
 export const MenuOne = styled.div`
-  background-color: ${colors.fontColor};
+  background-color: ${colors.grey};
   height: 5px;
   width: 100%;
   margin: 6px auto;
   transition-duration: 0.3s;
 `;
 export const MenuTwo = styled.div`
-  background-color: ${colors.fontColor};
+  background-color: ${colors.grey};
   height: 5px;
   width: 100%;
   margin: 6px auto;
   transition-duration: 0.3s;
 `;
 export const MenuThree = styled.div`
-  background-color: ${colors.fontColor};
+  background-color: ${colors.grey};
   height: 5px;
   width: 100%;
   margin: 6px auto;
